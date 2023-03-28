@@ -116,33 +116,49 @@ class CartoesController {
         async destroy(req,res){
             try {
                 const { user_id,id} = req.params
-               
-                const user = await User.findById(user_id)
-                if(!user){
-                    console.log('travo no user')
-                    return res.status(404).json()
-                }
-                const repository = await Repository.findOne({
-                    userId: user_id,
-                    _id: id
+                await Database().then((db)=>{
+                    return db.run("DELETE FROM Cartoes WHERE id=? AND userId=?",[id,user_id])
+                    .then((resp)=>{
+                        const response = !!resp.changes
+                        response?res.status(200).json({message:"Deleteado com sucesso"})
+                        : res.status(404).json({err:"algum parâmetro não foi encontrado"})
+                    })
                 })
-
-                if (!repository){
-                    console.log('travo no repository')
-                    console.log(user_id,id)
-                    console.log(repository)
-                    return res
-                    .status(404)
-                    .json()
-                }
-                await repository.deleteOne()
-                 return res.status(200).json()
             } catch (err) {
                 console.error(err)
                 return res.status(500).json({
                     error: "Internal server error!!"
                 })
             }
+            // try {
+            //     const { user_id,id} = req.params
+               
+            //     const user = await User.findById(user_id)
+            //     if(!user){
+            //         console.log('travo no user')
+            //         return res.status(404).json()
+            //     }
+            //     const repository = await Repository.findOne({
+            //         userId: user_id,
+            //         _id: id
+            //     })
+
+            //     if (!repository){
+            //         console.log('travo no repository')
+            //         console.log(user_id,id)
+            //         console.log(repository)
+            //         return res
+            //         .status(404)
+            //         .json()
+            //     }
+            //     await repository.deleteOne()
+            //      return res.status(200).json()
+            // } catch (err) {
+            //     console.error(err)
+            //     return res.status(500).json({
+            //         error: "Internal server error!!"
+            //     })
+            // }
         }
 }
 

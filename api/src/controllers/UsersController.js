@@ -9,7 +9,7 @@ export async function createTablePessoas(){
 }
 class UsersController {
 
-    async selectPessoas(req, res){
+    async index(req, res){
         try {
             const users = await Database()
              .then(db=>{
@@ -27,7 +27,7 @@ class UsersController {
             })   
         }
 }
-    async  selectPessoa(req, res){
+    async  show(req, res){
         try {
             // let id = req.body.id;
             const { id } = req.params

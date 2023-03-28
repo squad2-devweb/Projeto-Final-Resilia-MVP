@@ -9,18 +9,18 @@ createTablePessoas()
 createTableCartoes()
 //controllers publicos
  //REST 
-// routes.post('/sessions',SessionsController.create)
+routes.post('/sessions',SessionsController.create)
 // routes.post('/users'        ,UsersController.create)
 routes.post('/users/'        ,UsersController.insertPessoa)
 // //middleware
-// routes.use(auth)
+routes.use(auth)
 
 //-- protegido daqui pra baixo
 //controllers privados
 
 //RESTFULL
-routes.get('/users'         ,UsersController.selectPessoas)
-routes.get('/users/:id'         ,UsersController.selectPessoa)
+routes.get('/users'         ,UsersController.index)
+routes.get('/users/:id'         ,UsersController.show)
 // routes.get('/users'         ,UsersController.index)
 // routes.get('/users/:id'     ,UsersController.show)
  
@@ -33,6 +33,7 @@ routes.get('/users/:user_id/Cartoes',CartoesController.index)
 // routes.get('/users/:user_id/Cartoes',CartoesController.index)
 routes.post('/users/:user_id/Cartoes',CartoesController.create)
 // routes.post('/users/:user_id/Cartoes',CartoesController.create)
+routes.delete('/users/:user_id/Cartoes/:id',CartoesController.destroy) 
 // routes.delete('/users/:user_id/Cartoes/:id',CartoesController.destroy) 
 
 export default routes
