@@ -1,11 +1,12 @@
 import { Router } from "express";
 import HelloController from "./controllers/HelloController"
-import RepositoriesController from "./controllers/RepositoriesController";
+import CartoesController,{createTableCartoes} from "./controllers/CartoesController";
 import UsersController,{createTablePessoas} from "./controllers/UsersController";
 import SessionsController from "./controllers/SessionsController";
 import auth from './middlewares/auth'
 const routes = new Router()
 createTablePessoas()
+createTableCartoes()
 //controllers publicos
  //REST 
 // routes.post('/sessions',SessionsController.create)
@@ -28,8 +29,10 @@ routes.put('/users/:id'     ,UsersController.update)
 routes.delete('/users/:id'  ,UsersController.destroy) 
 // routes.delete('/users/:id'  ,UsersController.destroy) 
 
-// routes.get('/users/:user_id/repositories',RepositoriesController.index)
-// routes.post('/users/:user_id/repositories',RepositoriesController.create)
-// routes.delete('/users/:user_id/repositories/:id',RepositoriesController.destroy) 
+routes.get('/users/:user_id/Cartoes',CartoesController.index)
+// routes.get('/users/:user_id/Cartoes',CartoesController.index)
+routes.post('/users/:user_id/Cartoes',CartoesController.create)
+// routes.post('/users/:user_id/Cartoes',CartoesController.create)
+// routes.delete('/users/:user_id/Cartoes/:id',CartoesController.destroy) 
 
 export default routes

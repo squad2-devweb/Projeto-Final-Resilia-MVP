@@ -1,4 +1,4 @@
-import User from '../models/User'
+// import User from '../models/User'
 import {createPasswordHash}   from '../services/auth'
 import { Database } from "../database/index";
 
@@ -7,13 +7,6 @@ export async function createTablePessoas(){
         db.exec('CREATE TABLE IF NOT EXISTS Users ( id INTEGER PRIMARY KEY, nome TEXT,email TEXT, idade INTEGER ,cpf INTEGER ,password TEXT)')
     })
 }
-// export async function selectPessoas(req, res){
-//     Database().then(db=>{
-//         db.all('SELECT * FROM users')
-//         .then(users=>  res.json(users))
-//     });
-// }
-
 class UsersController {
 
     async selectPessoas(req, res){
