@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from "react";
 import { useContext } from "react";
 import { AuthContext } from "../contexts/auth";
@@ -10,6 +11,7 @@ import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import { LinkContainer } from "react-router-bootstrap";
 import { Link } from "react-router-dom";
+
 
 const NavBar = () => {
   const { logout, user } = useContext(AuthContext);
@@ -77,10 +79,3 @@ const NavBar = () => {
 
 export default NavBar;
 
-// return (
-//   <div className="nav">
-//       <h1 className="logo">SisRepo</h1>
-//       <p>{user.email}</p>
-//       <button onClick={onLogout}>Sair</button>
-//   </div>
-// )
