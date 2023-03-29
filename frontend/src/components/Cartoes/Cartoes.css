@@ -1,0 +1,101 @@
+.main-cartoes{
+    height:100vh;
+}
+li{
+    list-style-type: none;
+}
+.nocard{
+    color: grey;
+    text-align: center;
+}
+/* .cartoes{
+    overflow-x: scroll;
+    padding: 2rem 3rem;
+    max-width: 64vw;
+    max-height: 700px;
+    margin: 0 auto;
+    border-radius: 24px;
+    box-shadow: 4px 4px 12px 2px lightgrey,
+                    inset 4px 4px 8px rgba(211, 211, 211, 0.692);
+    background: linear-gradient(135deg, #ffffff,#fdfdfd); 
+    
+} */
+.list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 4px;
+    padding: 2rem 3rem;
+    max-width: 64vw;
+    min-height: 300px;
+    max-height: 700px;
+    margin: 0 auto;
+    overflow-y: scroll;
+    overflow-x:hidden ;
+    border-radius: 24px;
+    box-shadow: 4px 4px 12px 2px lightgrey,
+                    inset 4px 4px 8px rgba(211, 211, 211, 0.692);
+    background: linear-gradient(135deg, #ffffff,#fdfdfd);
+}
+.list::-webkit-scrollbar {
+    display: none;
+  }
+.item{
+    text-align: center;
+    width: 120  px;
+}
+img{
+    margin: 0 auto;
+    display: block;
+    max-height: 150px;
+}
+.new{
+    margin: 1rem auto;
+    max-width:64vw;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    padding: 0.5rem 2rem;
+    gap: 0.25rem;
+}
+.new .field {
+    width: 100%;
+}
+
+.new .field label {
+    align-self:start;
+    display: block;
+}
+.new .field input {
+    width: 50%;
+    border: 1px solid lightsteelblue;
+    padding: 0.5rem;
+    border-radius: 4px;
+}
+.new button{
+    border:1px solid lightsteelblue;
+    padding:0.5rem;
+    border-radius: 4px;
+}
+.new  button:hover{
+    box-shadow: 2px 2px 0 grey;
+    cursor: pointer;
+    transition:0.43s;
+}
+.deleteBtn {
+    margin-top: 0.2rem;
+    border:1px solid lightsteelblue;
+    padding:0.2rem 0.25rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+}
+.deleteBtn:hover{
+    background-color: rgba(255, 0, 0, 0.438);
+    box-shadow: 2px 2px 0 grey;
+    cursor: pointer;
+    transition:0.43s;
+}

@@ -20,12 +20,12 @@ export const AuthProvider = ({ children }) => {
         }
         setLoading(false)
     },[])
-    const cadastro = async (email,password) => {
+    const cadastro = async (nome,cpf,email,password) => {
       try {
         if(!email && !password){
           return setSignUpError('Email inválido')
         }
-        const response = await createUser(email,password)
+        const response = await createUser(nome,cpf,email,password)
         console.log(response)
         login(email,password)
         setSignUpError('')

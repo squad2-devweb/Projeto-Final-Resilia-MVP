@@ -3,10 +3,12 @@ import { BrowserRouter as Router, Route, Routes,Navigate } from "react-router-do
 import MainPage from "../pages/MainPage/MainPage";
 import LoginPage from "../pages/LoginPage/LoginPage";
 import SignUpPage from '../pages/SignUpPage/SignUpPage'
+import NavBar from "../components/NavBar";
+import Footer from "../components/Footer/Footer"
+import MeusCartoes from "../pages/MeusCartoes/MeusCartoes"
 import { AuthContext, AuthProvider } from "../contexts/auth";
 
 const AppRoutes = () => {
-  
   const Private = ({children}) => {
     const { authenticated,loading } = useContext(AuthContext)
     if(loading){
@@ -20,6 +22,7 @@ const AppRoutes = () => {
   return (
     <Router>
       <AuthProvider>
+        <NavBar />
         <Routes>
           <Route exact path="/cadastro" element={<SignUpPage />} />
           <Route exact path="/login" element={<LoginPage />} />
@@ -27,7 +30,12 @@ const AppRoutes = () => {
             <Private>
               <MainPage />
             </Private>} />
+          <Route exact path="/cartoes" element={
+            <Private>
+              <MeusCartoes />
+            </Private>} />
         </Routes>
+        <Footer />
       </AuthProvider>
     </Router>
   );
