@@ -5,12 +5,14 @@ import "./SignUpPage.css"
 
 const SignUpPage = () => {
     const {cadastro,signUpError} = useContext(AuthContext)
+    const [nome, setNome] = useState("");
+    const [cpf, setCpf] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
     const handleCadastro = async (e) => {
     e.preventDefault()
-    cadastro(email,password)
+    cadastro(nome,cpf,email,password)
 
   };
   return (
@@ -18,6 +20,24 @@ const SignUpPage = () => {
       <div className="form">
       <div className="title">Cadastro</div>
         <form onSubmit={handleCadastro}>
+          <div className="field">
+            <label htmlFor="nome">Nome:</label>
+            <input
+              type="text"
+              name="nome"
+              id="nome"
+              onChange={(e) => setNome(e.target.value)}
+            />
+          </div>
+          <div className="field">
+            <label htmlFor="cpf">CPF:</label>
+            <input
+              type="number"
+              name="cpf"
+              id="cpf"
+              onChange={(e) => setCpf(e.target.value)}
+            />
+          </div>
           <div className="field">
             <label htmlFor="email">E-mail:</label>
             <input
