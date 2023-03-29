@@ -1,4 +1,5 @@
 import React from 'react'
+import "./Navbar.css"
 import { useContext } from 'react'
 import { AuthContext } from '../contexts/auth'
 
