@@ -114,7 +114,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="container">
+      <div className=" bg-container">
         <div className="copyright">
           &copy; Copyright{" "}
           <strong>
