@@ -7,6 +7,7 @@ import NavBar from "../components/NavBar";
 import Footer from "../components/Footer/Footer"
 import MeusCartoes from "../pages/MeusCartoes/MeusCartoes"
 import { AuthContext, AuthProvider } from "../contexts/auth";
+import FaleConosco from "../pages/FaleConosco/FaleConosco";
 
 const AppRoutes = () => {
   const Private = ({children}) => {
@@ -26,6 +27,7 @@ const AppRoutes = () => {
         <Routes>
           <Route exact path="/cadastro" element={<SignUpPage />} />
           <Route exact path="/login" element={<LoginPage />} />
+          <Route exact path="/faleconosco" element={<FaleConosco />} />
           <Route exact path="/" element={
             <Private>
               <MainPage />

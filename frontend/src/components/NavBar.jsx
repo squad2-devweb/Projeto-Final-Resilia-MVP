@@ -46,7 +46,7 @@ const NavBar = () => {
             navbarScroll
           >
             <Nav.Link href="/">Página Princial</Nav.Link>
-            <Nav.Link>Fale Conosco</Nav.Link>
+            <Nav.Link href='/faleconosco'>Fale Conosco</Nav.Link>
             <NavDropdown title="Área do cliente" id="navbarScrollingDropdown">
               <NavDropdown.Item>Minha Conta</NavDropdown.Item>
               <NavDropdown.Item href="/cartoes">Meus Cartões</NavDropdown.Item>
@@ -58,7 +58,7 @@ const NavBar = () => {
               {user === null ? (
                 <Nav.Link>Faça Login</Nav.Link>
               ) : (
-                <Nav.Link>{user.email}</Nav.Link>
+                <Nav.Link>{user.nome}</Nav.Link>
               )}
             </LinkContainer>
           </Nav>
