@@ -2,10 +2,11 @@ import React,{useContext} from "react";
 import { BrowserRouter as Router, Route, Routes,Navigate } from "react-router-dom";
 import MainPage from "../pages/MainPage/MainPage";
 import LoginPage from "../pages/LoginPage/LoginPage";
-import SignUpPage from '../pages/SignUpPage/SignUpPage'
+import SignUpPage from '../pages/SignUpPage/SignUpPage';
+import MinhaConta from "../pages/MinhaConta/MinhaConta";
 import NavBar from "../components/NavBar";
-import Footer from "../components/Footer/Footer"
-import MeusCartoes from "../pages/MeusCartoes/MeusCartoes"
+import Footer from "../components/Footer/Footer";
+import MeusCartoes from "../pages/MeusCartoes/MeusCartoes";
 import { AuthContext, AuthProvider } from "../contexts/auth";
 
 const AppRoutes = () => {
@@ -33,6 +34,10 @@ const AppRoutes = () => {
           <Route exact path="/cartoes" element={
             <Private>
               <MeusCartoes />
+            </Private>} />
+          <Route exact path="/minhaconta" element={
+            <Private>
+              <MinhaConta />
             </Private>} />
         </Routes>
         <Footer />
