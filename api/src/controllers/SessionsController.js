@@ -56,7 +56,7 @@ class SessionsController {
       let userPasswordDB = ''
       let user = {}
       await Database().then((db)=>{
-       return db.get("SELECT id,email,password FROM users WHERE email=?",[email])
+       return db.get("SELECT id,nome,cpf,idade,email,password FROM users WHERE email=?",[email])
       }).then((response)=>{
         userPasswordDB = response.password
         user = response 
@@ -74,12 +74,15 @@ class SessionsController {
         if(err)throw err
         if(data){
             console.log({msg:"Login Sucess"})
-            const { id } = user
+            const { id,nome,cpf,idade } = user
             console.log(user)
             return res.json({
                 user:{
                     id,
-                    email
+                    email,
+                    nome,
+                    cpf,
+                    idade
                 },
                 token:jwt.sign({id},authConfig.secret,{
                     expiresIn:authConfig.expiresIn,
