@@ -9,7 +9,7 @@ O grupo deve decidir qual será o MVP utilizado, o site precisa ter - página in
 
 - O front-end deve ser feito utilizando React e Bootstrap.
 
-## INSTALAÇÕES DE PACOTES
+## INSTALAÇÕES DE PACOTES (Print do terminal das instalações)
 Esse projeto foi utilizado para simular como é um ambiente de trabalho, pois foi colocado para ser feito em um curto tempo, utilizando metodologias ágeis.
 
 FAÇA O CLONE OU DOWNLOAD DO PROJETO EM SUA MÁQUINA
@@ -22,7 +22,7 @@ ACESSE A PASTA CLIENT E BACKEND ATRAVÉS DO TERMINAL
 
 ## FERRAMENTAS UTILIZADAS
 Visual Studio Code
-MySQL Workbench
+SQLite 
 GitHub
 React JS
 Canvas
