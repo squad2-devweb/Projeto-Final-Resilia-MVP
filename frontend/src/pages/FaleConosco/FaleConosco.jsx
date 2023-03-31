@@ -11,24 +11,27 @@ function FaleConosco() {
   }
 const a = {
   img:{
-    objectFit:"contain",
-    height:"450px",
+    objectFit:"cover",
+    // maxHeight:"450px",
     width:"100%"
   },
   bg:{
     background:"linear-gradient(yellow,blue)"
+  },
+  textbg:{
+    background:"#f1f1f157"
   }
 }
     return (
       <>
         <Carousel style={a.bg} variant='dark' activeIndex={index} onSelect={handleSelect}>
-          <Carousel.Item>
+          <Carousel.Item >
             <img style={a.img}
               className="d-block w-100"
               src="/assets/carro/4.jpg"
               alt="First slide"
             />
-            <Carousel.Caption>
+            <Carousel.Caption style={a.textbg}>
               <h3>First slide label</h3>
               <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
             </Carousel.Caption>
@@ -40,7 +43,7 @@ const a = {
               alt="Second slide"
             />
 
-            <Carousel.Caption>
+            <Carousel.Caption style={a.textbg}>
               <h3>Second slide label</h3>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
             </Carousel.Caption>
@@ -52,7 +55,7 @@ const a = {
               alt="Third slide"
             />
 
-            <Carousel.Caption>
+            <Carousel.Caption style={a.textbg}>
               <h3>Third slide label</h3>
               <p>
                 Praesent commodo cursus magna, vel scelerisque nisl consectetur.

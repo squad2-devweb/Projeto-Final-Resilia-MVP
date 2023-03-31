@@ -1,5 +1,5 @@
 import React, { createContext,useState,useEffect } from "react"
-import { API,createSession,createUser,deleteUser } from "../services/api"
+import { API,createSession,createUser,deleteUser,updateUser } from "../services/api"
 import { useNavigate } from "react-router-dom"
 
 export const AuthContext = createContext()
@@ -72,6 +72,10 @@ export const AuthProvider = ({ children }) => {
         console.log(err)
       }
     }
+    const update = async(userId,nome,email,idade,cpf,password) => {
+      console.log(userId,nome,email,idade,cpf)
+      await updateUser(userId,nome,email,idade,cpf,password)
+    }
 
   return (
     <AuthContext.Provider
@@ -85,6 +89,7 @@ export const AuthProvider = ({ children }) => {
         loginError,
         logout,
         deleteAcc,
+        update
       }}>
       {children}
     </AuthContext.Provider>

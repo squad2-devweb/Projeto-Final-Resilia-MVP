@@ -10,6 +10,10 @@ export const createUser = async (nome,cpf,email,password)=> {
 export const deleteUser = async (userId) => {
     return API.delete(`/users/${userId}`)
 }
+export const updateUser = async (userId,nome,email,idade,cpf,password) => {
+    console.log('axios chamou')
+    return API.put(`/users/${userId}`,{nome,email,idade,cpf,password})
+}
 export const createSession = async(email,password)=> {
     return API.post('/sessions',{email,password})
 }

@@ -48,7 +48,8 @@ const NavBar = () => {
             <Nav.Link href="/">Página Princial</Nav.Link>
             <Nav.Link href='/faleconosco'>Fale Conosco</Nav.Link>
             <NavDropdown title="Área do cliente" id="navbarScrollingDropdown">
-              <NavDropdown.Item>Minha Conta</NavDropdown.Item>
+              <NavDropdown.Item href='/login'>Login</NavDropdown.Item>
+              <NavDropdown.Item href='/conta' >Minha Conta</NavDropdown.Item>
               <NavDropdown.Item href="/cartoes">Meus Cartões</NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item onClick={handleLogout}>Sair</NavDropdown.Item>
