@@ -14,6 +14,7 @@ import MeusCartoes from "../pages/MeusCartoes/MeusCartoes";
 import { AuthContext, AuthProvider } from "../contexts/auth";
 import FaleConosco from "../pages/FaleConosco/FaleConosco";
 import MinhaConta from "../pages/MinhaConta/MinhaConta";
+
 const AppRoutes = () => {
   const Private = ({ children }) => {
     const { authenticated, loading } = useContext(AuthContext);
@@ -53,6 +54,7 @@ const AppRoutes = () => {
               </Private>
             }
           />
+
         </Routes>
         <Footer />
       </AuthProvider>

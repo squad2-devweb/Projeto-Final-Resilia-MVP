@@ -18,18 +18,22 @@ const a = {
   },
   textbg:{
     background:"#f1f1f157"
+
   }
 }
     return (
       <>
         <Carousel style={a.bg} variant='dark' activeIndex={index} onSelect={handleSelect}>
+
           <Carousel.Item style={{height:"350px"}} >
+
             <img style={a.img}
               className="d-block w-100"
               src="/assets/carro/4.jpg"
               alt="First slide"
             />
             <Carousel.Caption style={a.textbg}>
+
               <h3>First slide label</h3>
               <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
             </Carousel.Caption>
@@ -46,6 +50,7 @@ const a = {
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
             </Carousel.Caption>
           </Carousel.Item>
+
           <Carousel.Item style={{height:"350px"}}>
             <img style={a.img}
               className="d-block w-100"
@@ -54,6 +59,7 @@ const a = {
             />
 
             <Carousel.Caption style={a.textbg}>
+
               <h3>Third slide label</h3>
               <p>
                 Praesent commodo cursus magna, vel scelerisque nisl consectetur.
