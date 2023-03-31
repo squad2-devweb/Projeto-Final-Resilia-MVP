@@ -33,14 +33,7 @@ const AppRoutes = () => {
           <Route exact path="/cadastro" element={<SignUpPage />} />
           <Route exact path="/login" element={<LoginPage />} />
           <Route exact path="/faleconosco" element={<FaleConosco />} />
-          <Route
-            exact
-            path="/"
-            element={
-              <Private>
-                <MainPage />
-              </Private>
-            }
+          <Route exact path="/" element={<MainPage />}
           />
           <Route
             exact

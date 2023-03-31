@@ -11,12 +11,10 @@ function FaleConosco() {
   }
 const a = {
   img:{
-    objectFit:"cover",
-    // maxHeight:"450px",
-    width:"100%"
+    objectFit:"contain",
   },
   bg:{
-    background:"linear-gradient(yellow,blue)"
+    // background:"linear-gradient(yellow,blue)"
   },
   textbg:{
     background:"#f1f1f157"
@@ -25,7 +23,7 @@ const a = {
     return (
       <>
         <Carousel style={a.bg} variant='dark' activeIndex={index} onSelect={handleSelect}>
-          <Carousel.Item >
+          <Carousel.Item style={{height:"350px"}} >
             <img style={a.img}
               className="d-block w-100"
               src="/assets/carro/4.jpg"
@@ -36,10 +34,10 @@ const a = {
               <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
             </Carousel.Caption>
           </Carousel.Item>
-          <Carousel.Item>
+          <Carousel.Item style={{height:"350px"}}>
             <img style={a.img}
               className="d-block w-100"
-              src="/assets/carro/2.png"
+              src="/assets/carro/5.jpg"
               alt="Second slide"
             />
 
@@ -48,10 +46,10 @@ const a = {
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
             </Carousel.Caption>
           </Carousel.Item>
-          <Carousel.Item>
+          <Carousel.Item style={{height:"350px"}}>
             <img style={a.img}
               className="d-block w-100"
-              src="/assets/carro/3.png"
+              src="/assets/carro/6.jpg"
               alt="Third slide"
             />
 
