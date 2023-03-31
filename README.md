@@ -2,7 +2,8 @@
 
 
 ## DETALHES DA PROPOSTA DO PROJETO
-O grupo deve decidir qual será o MVP utilizado, o site precisa ter - página inicial, sobre, funcionalidades (com conteúdo cadastrável e editável). O conteúdo das funcionalidades devem ser consultado de uma API. Para realizar a edição e cadastro serão criadas rotas.
+O grupo deve decidir qual será o MVP utilizado, o site precisa ter - página inicial, sobre, funcionalidades (com conteúdo cadastrável e editável). O conteúdo das funcionalidades devem ser consultado de uma API. Para realizar a edição e cadastro serão criadas rotas. 
+O tema escolhido pra realizar esse projeto foi Rio Card mais.
 
 ## REQUISITOS
 
@@ -35,7 +36,7 @@ O grupo deve decidir qual será o MVP utilizado, o site precisa ter - página in
 - [X] Stackoverflow 
 - [X] Insomnia  
 
-## Bibliotecas utilizadas
+## BIBLIOTECAS UTILIZADAS
 - NA API
   - Express cors
   - Jwt ( jsonWeb Token " gera token de sessão " )
@@ -46,7 +47,7 @@ O grupo deve decidir qual será o MVP utilizado, o site precisa ter - página in
   - Sucrase (" transpilador de código ")
 
 
-FERRAMENTAS UTILIZADAS 
+### FERRAMENTAS UTILIZADAS 
 - NO FRONTEND
   - Vite + React 
   - Axios  
@@ -58,5 +59,7 @@ FERRAMENTAS UTILIZADAS
   - Unsplash 
   - Freepik
   
-
+  ## AUTORES
+| [<img src="https://github.com/squad2-devweb/Projeto-Final-Resilia-MVP/blob/main/FotoSquad2/LuisFelipeM..jpg" width=115><br><sub> Luis Felipe Macedo </sub>](https://github.com/LuisDevLipe) |  [<img src="https://github.com/squad2-devweb/Projeto-Final-Resilia-MVP/blob/main/FotoSquad2/J%C3%BAlioXavier.jpg" width=115><br><sub> Júlio Xavier </sub>](https://github.com/Julioxli) |  [<img src="https://github.com/squad2-devweb/Projeto-Final-Resilia-MVP/blob/main/FotoSquad2/LucasOliveira.jpg" width=115><br><sub>Lucas Oliveira</sub>](https://github.com/LzLuscas) |  [<img src="https://github.com/squad2-devweb/Projeto-Final-Resilia-MVP/blob/main/FotoSquad2/RamonSolfer.jpg" width=115><br><sub>Ramon Souza</sub>](https://github.com/ramonsolfer) |  [<img src="https://github.com/squad2-devweb/Projeto-Final-Resilia-MVP/blob/main/FotoSquad2/EmanuellaBrito.jpeg" width=115><br><sub>Emanuella Brito</sub>](https://github.com/MBrito0) |  [<img src="https://github.com/squad2-devweb/Projeto-Final-Resilia-MVP/blob/main/FotoSquad2/VivianeMoreira.jpg" width=115><br><sub>Viviane Moreira</sub>](https://github.com/vivianefrts) |
+| --- | --- | --- | --- | --- | --- | 
 
