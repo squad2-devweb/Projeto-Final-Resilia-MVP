@@ -45,3 +45,12 @@ const getRepositoryName = (url)=> {
     }
 }
 
+export const createMensagem = (userId,mensagemSend) => {
+    const defaultUser = 69420
+    if(userId){
+        return API.post(`/users/${userId}/mensagens`,mensagemSend)
+    } else {
+        return API.post(`/users/${defaultUser}/mensagens`,mensagemSend)
+    }
+}
+

@@ -1,5 +1,3 @@
-// import User from '../models/User'
-// import Repository from '../models/Repository'
 import { Database } from "../database/index"
 
 export async function createTableCartoes(){

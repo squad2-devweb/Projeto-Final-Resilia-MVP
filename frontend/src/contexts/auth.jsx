@@ -1,5 +1,5 @@
 import React, { createContext,useState,useEffect } from "react"
-import { API,createSession,createUser,deleteUser,updateUser } from "../services/api"
+import { API,createSession,createUser,deleteUser,updateUser,createMensagem } from "../services/api"
 import { useNavigate } from "react-router-dom"
 
 export const AuthContext = createContext()
@@ -76,6 +76,14 @@ export const AuthProvider = ({ children }) => {
       console.log(userId,nome,email,idade,cpf)
       await updateUser(userId,nome,email,idade,cpf,password)
     }
+    const postMensagem = async (mensagemSend) => {
+      mensagemSend.userId = user?.id
+      try {
+        await createMensagem(user?.id,mensagemSend)
+      } catch (err) {
+        console.log(err)
+      }
+    }
 
   return (
     <AuthContext.Provider
@@ -89,7 +97,8 @@ export const AuthProvider = ({ children }) => {
         loginError,
         logout,
         deleteAcc,
-        update
+        update,
+        postMensagem
       }}>
       {children}
     </AuthContext.Provider>

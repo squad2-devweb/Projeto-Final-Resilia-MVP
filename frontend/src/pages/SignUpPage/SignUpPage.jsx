@@ -16,6 +16,7 @@ const SignUpPage = () => {
     const [nome, setNome] = useState("");
     const [cpf, setCpf] = useState("");
     const [email, setEmail] = useState("");
+    const [idade,setIdade] = useState("")
     const [password, setPassword] = useState("");
 
     const handleCadastro = async (e) => {
@@ -98,6 +99,17 @@ const SignUpPage = () => {
                   name="cpf"
                   id="cpf"
                   onChange={(e) => setCpf(e.target.value)}
+                  required
+                  />
+              </div>
+
+              <div className="mt-3 mb-3">
+                  <label className="form-label h4">CPF</label>
+                  <input  className="form-control border border-primary text-none"  placeholder="Sua Idade." 
+                  type="number"
+                  name="idade"
+                  id="idade"
+                  onChange={(e) => setIdade(e.target.value)}
                   required
                   />
               </div>

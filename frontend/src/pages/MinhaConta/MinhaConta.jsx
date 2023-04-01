@@ -1,26 +1,29 @@
 import React, { useContext,useState } from "react";
 import { AuthContext } from "../../contexts/auth";
 import { Form,Button,Container } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 
 const MinhaConta = () => {
-    
-  const { user,update } = useContext(AuthContext);
+  const { user,update,logout } = useContext(AuthContext);
   const { id,nome, email, cpf, idade = 0 } = user;
-    
+
     const [newNome,setNewNome] = useState(nome)
     const [newEmail,setNewEmail] = useState(email)
     const [newIdade,setNewIdade] = useState(idade)
     const [newCpf,setNewCpf] = useState(cpf)
     const [password,setPassword] = useState('')
-    const [botao ,setBotao] = useState(false)
 
+    const [botao ,setBotao] = useState(false)
     const [senhaError,setSenhaError] = useState('')
+
     const handleUpdate = (e) => {
       e.preventDefault()
       if (password.length >= 4) {
         update(id, newNome, newEmail, newIdade, newCpf, password),
         setBotao(false);
         setSenhaError('')
+        logout()
+
       }else if (password.length <4)
       setSenhaError("Senha precisa ter no mínimo 4 caracteres");
     };
@@ -45,6 +48,13 @@ const MinhaConta = () => {
             boxShadow:"4px 4px 5px lightgrey",
             width:"95%",
             height:"650px"
+        },
+        cont2:{
+          margin:"0 auto",
+          borderRadius:"24px",
+          boxShadow:"4px 4px 5px lightgrey",
+          width:"95%",
+          height:"650px"
         }
     }
   return (
@@ -112,7 +122,7 @@ const MinhaConta = () => {
         <Button className='bg-success' onClick={()=>handleUpdate()}>Enviar alterações</Button>
         </form>
       </div> */}
- <Container className=' mt-5 mb-5'>
+ <Container className='mt-5 mb-5' style={style.cont2}>
 
 <div className=' text-center mb-2'>
 <svg xmlns="http://www.w3.org/2000/svg" width="62" height="62" fill="currentColor" className="bi bi-person-gear" viewBox="0 0 16 16">
@@ -120,7 +130,7 @@ const MinhaConta = () => {
 </svg>
 </div>
 
-<Form onSubmit={(e)=>handleUpdate(e)}>
+<Form>
 <div className="d-flex flex-row flex-wrap justify-content-around">
 
 
@@ -162,7 +172,7 @@ const MinhaConta = () => {
 </div>
 
 <div className='text-center mt-2'>
-<Button className="btn btn-primary" type="submit">Atualizar informações</Button>
+<Button onClick={handleUpdate} className="btn btn-primary" type="submit">Atualizar informações</Button>
 <Button onClick={()=>setBotao(false)} className="btn btn-danger" type="button">Cancelar</Button>
 </div>
 </Form>
@@ -171,7 +181,7 @@ const MinhaConta = () => {
 
       ) : (
 
-      <div className="conta border mt-4 mb-4" style={style.cont}>
+      <div className="conta border mt-5 mb-5" style={style.cont}>
         <div style={style.flex}>
             <h1>Informações da Conta:</h1>
         <p className='text-muted'>Nome:</p>
@@ -182,7 +192,9 @@ const MinhaConta = () => {
         <p className='border-bottom w-50'>{idade}</p>
         <p className='text-muted'>CPF:</p>
         <p className='border-bottom w-50'>{cpf}</p>
-        <Button className='bg-warning mt-2 mb-2' onClick={()=>setBotao(true)}>Alterar dados</Button>
+        <div className="text-center mt-2">
+        <Button className='mt-2 mb-2 btn btn-warning' onClick={()=>setBotao(true)}>Alterar dados</Button>
+        </div>
         </div>
       </div>
       )

@@ -1,26 +1,32 @@
 import { Container, Form, Button, Image } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import React, { useState } from "react";
+import React, { useState,useContext } from "react";
 import Carousel from "react-bootstrap/Carousel";
+import { AuthContext } from "../../contexts/auth";
 
 function FaleConosco() {
   const [index, setIndex] = useState(0);
+  const {postMensagem} = useContext(AuthContext)
+  const [nome,setNome] = useState('')
+  const [email,setEmail] = useState('')
+  const [assunto,setAssunto] = useState('')
+  const [mensagem,setMensagem] = useState('')
 
+  const handlePost = () => {
+    const mensagemSend = {nome,email,assunto,mensagem}
+    if (
+      !nome || !email || !assunto || !mensagem
+    ){
+      alert("Por favor não nos envie um formulário vazio... :(")
+      return
+    } else {
+      postMensagem(mensagemSend)
+    }
+  }
   const handleSelect = (selectedIndex, e) => {
     setIndex(selectedIndex);
   }
-const a = {
-  img:{
-    objectFit:"contain",
-  },
-  bg:{
-    // background:"linear-gradient(yellow,blue)"
-  },
-  textbg:{
-    background:"#f1f1f157"
 
-  }
-}
     return (
       <>
         <Carousel style={a.bg} variant='dark' activeIndex={index} onSelect={handleSelect}>
@@ -77,6 +83,8 @@ const a = {
                 className="w-50 border-info"
                 type="text"
                 placeholder="Nos diga o seu nome..."
+                value={nome}
+                onChange={(e)=>setNome(e.target.value)}
               />
             </Form.Group>
 
@@ -86,6 +94,8 @@ const a = {
                 className="w-50 border-info"
                 type="email"
                 placeholder="Deixe seu email"
+                value={email}
+                onChange={(e)=>setEmail(e.target.value)}
               />
               <Form.Text className="text-muted">
                 Não compartilharemos seu e-mail com ngm.
@@ -101,6 +111,8 @@ const a = {
                 className="w-50 border-info"
                 type="text"
                 placeholder="Sobre o que deseja respostas?"
+                value={assunto}
+                onChange={(e)=>setAssunto(e.target.value)}
               />
             </Form.Group>
 
@@ -111,6 +123,8 @@ const a = {
                 className="w-100"
                 as="textarea"
                 placeholder="Sobre o que deseja respostas?"
+                value={mensagem}
+                onChange={(e)=>setMensagem(e.target.value)}
               />
             </Form.Group>
 
@@ -120,7 +134,9 @@ const a = {
                 label="Aceito receber respostas através do Whatsapp"
               />
             </Form.Group>
-            <Button variant="info" type="button">
+            <Button variant="info" type="button"
+            onClick={handlePost}
+            >
               Enviar Mensagem
             </Button>
           </Form>
@@ -163,3 +179,15 @@ const style = {
     objectFit: "cover",
   },
 };
+const a = {
+  img:{
+    objectFit:"contain",
+  },
+  bg:{
+    // background:"linear-gradient(yellow,blue)"
+  },
+  textbg:{
+    background:"#f1f1f157"
+
+  }
+}

@@ -11,14 +11,13 @@ class UsersController {
 
     async index(req, res){
         try {
-            const users = await Database()
+            await Database()
              .then(db=>{
              db.all('SELECT * FROM users')
              .then((usersDb)=> {
                 res.json(usersDb)
              })
-         });
-         return (!users? null : users)
+         })
         } catch (err) {
             console.error(err)
             return res.status(500)
@@ -51,7 +50,7 @@ class UsersController {
             })  
         }
 }
-    async  insertPessoa(req, res){
+    async  create(req, res){
         try {
             const {nome,email,idade,cpf,password} = req.body
             const user = await Database().then(db=>{
