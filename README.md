@@ -14,7 +14,7 @@ O tema escolhido pra realizar esse projeto foi Rio Card mais.
 | SQLite     |             |
  
  
-## INSTALAÇÕES DE PACOTES (Print do terminal das instalações)
+## INSTALAÇÕES DE PACOTES 
 
 > FAÇA O CLONE OU DOWNLOAD DO PROJETO EM SUA MÁQUINA
 
@@ -22,7 +22,7 @@ O tema escolhido pra realizar esse projeto foi Rio Card mais.
 
 > ACESSE A PASTA CLIENT E BACKEND ATRAVÉS DO TERMINAL
 
-> INSTALE AS DEPENDÊNCIAS NPM INSTALL USANDO O COMANDO NPM RUN DEV 
+> INSTALE AS DEPENDÊNCIAS NPM INSTALL USANDO O COMANDO NPM RUN DEV / NPM START
 
 ## TECNOLOGIAS UTILIZADAS
 - [X] Visual Studio Code
