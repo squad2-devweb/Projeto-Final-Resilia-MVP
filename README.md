@@ -16,14 +16,13 @@ O tema escolhido pra realizar esse projeto foi Rio Card mais.
  
 ## INSTALAÇÕES DE PACOTES (Print do terminal das instalações)
 
-> Esse projeto foi utilizado para simular como é um ambiente de trabalho, pois foi colocado para ser feito em um curto tempo, utilizando metodologias ágeis.
-
 > FAÇA O CLONE OU DOWNLOAD DO PROJETO EM SUA MÁQUINA
 
 > ABRA O PROJETO COM O VS CODE
 
 > ACESSE A PASTA CLIENT E BACKEND ATRAVÉS DO TERMINAL
-> INSTALE AS DEPENDÊNCIAS NPM INSTALL COM O COMANDO NPM RUN DEV 
+
+> INSTALE AS DEPENDÊNCIAS NPM INSTALL USANDO COM O COMANDO NPM RUN DEV 
 
 ## TECNOLOGIAS UTILIZADAS
 - [X] Visual Studio Code
