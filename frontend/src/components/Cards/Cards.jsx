@@ -18,7 +18,6 @@ function Cards() {
               RioCard Vale-Transporte
             </Card.Title>
             <Card.Text className="text-light">
-              {/* <h3 className="text-light">Vale-Transporte</h3> */}
               RioCard vinculado a sua empresa para melhor praticidade.
             </Card.Text>
             <Button

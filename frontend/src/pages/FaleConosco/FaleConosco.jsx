@@ -93,11 +93,11 @@ function FaleConosco() {
               Enviar Mensagem
             </Button>
           </Form>
-          <Image
+          {/* <Image
             style={style.image}
             src="/assets/25929.jpg"
             className="rounded"
-          ></Image>
+          ></Image> */}
         </Container>
       </>
     );
@@ -129,13 +129,14 @@ const style = {
     borderRadius: "125px",
     // width:"550px",
     boxShadow: "2px 2px 5px grey",
-    objectFit: "cover",
+    objectFit: "contain",
   },
 };
 const a = {
   img:{
     display:"block",
-    // width:"100%",
+    maxHeight:"380px",
+    maxWidth:"100%",
     margin:"0 auto"
   },
   bg:{

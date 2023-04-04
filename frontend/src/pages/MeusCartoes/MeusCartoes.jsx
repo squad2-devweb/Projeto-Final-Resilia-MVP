@@ -1,8 +1,6 @@
 import React,{useState,useEffect,useContext} from "react"
 import { Link} from 'react-router-dom'
-// import "./MainPageStyle.css";
 import "./MeusCartoes.css"
-// import Search from "../../components/Search"
 import Cartoes from "../../components/Cartoes/Cartoes"
 import { getCartoes,CreateCartao,destroyCartao } from "../../services/api"
 import { AuthContext } from "../../contexts/auth"

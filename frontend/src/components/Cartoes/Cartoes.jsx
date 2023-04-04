@@ -5,9 +5,7 @@ import { Form } from "react-bootstrap";
 const Cartoes = ({
   cartoes,
   onDeleteCartao,
-  onNewCartao,
-  onDeleteAcc,
-  notFoundRepo,
+  onNewCartao
 }) => {
   const [cartaoNumero, setCartaoNumero] = useState("");
   const [cartaoTipo, setCartaoTipo] = useState("");

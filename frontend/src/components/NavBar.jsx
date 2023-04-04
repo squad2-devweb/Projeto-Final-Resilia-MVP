@@ -1,5 +1,5 @@
 
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { useContext } from "react";
 import { AuthContext } from "../contexts/auth";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -9,20 +9,14 @@ import Form from "react-bootstrap/Form";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
-import { LinkContainer } from "react-router-bootstrap";
-import { Link } from "react-router-dom";
+
 
 
 const NavBar = () => {
   const { logout, user } = useContext(AuthContext);
-  // const [User,setUser]= useState('')
-  // useEffect( ()=>{
-  //   (async ()=> setUser(user.email))()
-  // }),[user]
 
   const handleLogout = () => {
     logout();
-    // setUser(null)
   };
   const style = {
     font: {
