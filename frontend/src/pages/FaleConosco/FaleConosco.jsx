@@ -5,7 +5,6 @@ import Carousel from "react-bootstrap/Carousel";
 import { AuthContext } from "../../contexts/auth";
 
 function FaleConosco() {
-  const [index, setIndex] = useState(0);
   const {postMensagem} = useContext(AuthContext)
   const [nome,setNome] = useState('')
   const [email,setEmail] = useState('')
@@ -23,56 +22,10 @@ function FaleConosco() {
       postMensagem(mensagemSend)
     }
   }
-  const handleSelect = (selectedIndex, e) => {
-    setIndex(selectedIndex);
-  }
 
     return (
       <>
-        <Carousel style={a.bg} variant='dark' activeIndex={index} onSelect={handleSelect}>
-
-          <Carousel.Item style={{height:"350px"}} >
-
-            <img style={a.img}
-              className="d-block w-100"
-              src="/assets/carro/4.jpg"
-              alt="First slide"
-            />
-            <Carousel.Caption style={a.textbg}>
-
-              <h3>First slide label</h3>
-              <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-            </Carousel.Caption>
-          </Carousel.Item>
-          <Carousel.Item style={{height:"350px"}}>
-            <img style={a.img}
-              className="d-block w-100"
-              src="/assets/carro/5.jpg"
-              alt="Second slide"
-            />
-
-            <Carousel.Caption style={a.textbg}>
-              <h3>Second slide label</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            </Carousel.Caption>
-          </Carousel.Item>
-
-          <Carousel.Item style={{height:"350px"}}>
-            <img style={a.img}
-              className="d-block w-100"
-              src="/assets/carro/6.jpg"
-              alt="Third slide"
-            />
-
-            <Carousel.Caption style={a.textbg}>
-
-              <h3>Third slide label</h3>
-              <p>
-                Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-              </p>
-            </Carousel.Caption>
-          </Carousel.Item>
-        </Carousel>
+    <img style={a.img} src="/assets/carro/7.jpg" alt="" />
 
         <Container style={style.container} className="mt-5 mb-5">
           <h1 style={style.h1}>Fale Conosco</h1>
@@ -181,7 +134,9 @@ const style = {
 };
 const a = {
   img:{
-    objectFit:"contain",
+    display:"block",
+    // width:"100%",
+    margin:"0 auto"
   },
   bg:{
     // background:"linear-gradient(yellow,blue)"

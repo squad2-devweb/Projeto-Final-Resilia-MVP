@@ -10,16 +10,15 @@ const Footer = () => {
         <div className="container">
           <div className="row">
             <div className="col-lg-6">
-              <h4>Our Newsletter</h4>
+              <h4>Notícias</h4>
               <p>
-                Tamen quem nulla quae legam multos aute sint culpa legam noster
-                magna
+                Quer ficar por dentro das novidades? Vincule seu melhor e-mail e fique por dentro das nossas ofertas e promoções!
               </p>
             </div>
             <div className="col-lg-6">
               <form>
                 <input type="email" name="email" placeholder="Digite seu email..."/>
-                <input type="submit" value="Subscribe" />
+                <input type="submit" value="Vincular" />
               </form>
             </div>
           </div>
@@ -29,43 +28,43 @@ const Footer = () => {
         <div className="container">
           <div className="row">
             <div className="col-lg-3 col-md-6 footer-links">
-              <h4>Useful Links</h4>
+              <h4>Links úteis</h4>
               <ul>
                 <li>
                   <i className="bx bx-chevron-right"></i> <a href="#">Home</a>
                 </li>
                 <li>
                   <i className="bx bx-chevron-right"></i>{" "}
-                  <a href="#">About us</a>
+                  <a href="#">Sobre nós</a>
                 </li>
                 <li>
                   <i className="bx bx-chevron-right"></i>{" "}
-                  <a href="#">Services</a>
+                  <a href="#">Serviços</a>
                 </li>
                 <li>
                   <i className="bx bx-chevron-right"></i>{" "}
-                  <a href="#">Terms of service</a>
+                  <a href="#">Termos de serviços</a>
                 </li>
                 <li>
                   <i className="bx bx-chevron-right"></i>{" "}
-                  <a href="#">Privacy policy</a>
+                  <a href="#">Política de privacidade</a>
                 </li>
               </ul>
             </div>
             <div className="col-lg-3 col-md-6 footer-links">
-              <h4>Our Services</h4>
+              <h4>Nossos serviços</h4>
               <ul>
                 <li>
                   <i className="bx bx-chevron-right"></i>{" "}
-                  <a href="#">Web Design</a>
+                  <a href="#">Web Designer</a>
                 </li>
                 <li>
                   <i className="bx bx-chevron-right"></i>{" "}
-                  <a href="#">Web Development</a>
+                  <a href="#">Desenvolvedor Web</a>
                 </li>
                 <li>
                   <i className="bx bx-chevron-right"></i>{" "}
-                  <a href="#">Product Management</a>
+                  <a href="#">Gestor de produtos</a>
                 </li>
                 <li>
                   <i className="bx bx-chevron-right"></i>{" "}
@@ -73,40 +72,38 @@ const Footer = () => {
                 </li>
                 <li>
                   <i className="bx bx-chevron-right"></i>{" "}
-                  <a href="#">Graphic Design</a>
+                  <a href="#"> Design Gráfico</a>
                 </li>
               </ul>
             </div>
             <div className="col-lg-3 col-md-6 footer-contact">
-              <h4>Contact Us</h4>
-              <p> A108 Adam Street </p>
-              <p> New York, NY 535022</p>
-              <p> United States </p>
+              <h4>Contate-nos</h4>
+              <p> R. Dona Isabel, 700 </p>
+              <p> Rio de Janeiro, RJ 21032060</p>
+              <p> Brasil </p>
               <p>
-                <strong>Phone:</strong> +1 5589 55488 55
+                <strong>Celular:</strong> +21 1112233455
               </p>
               <p>
-                <strong>Email:</strong>info@example.com
+                <strong>Email:</strong>info@exemplo.com
               </p>
             </div>
             <div className="col-lg-3 col-md-6 footer-info">
-              <h3>About DevVE</h3>
+              <h3>SOBRE NÓS</h3>
               <p>
-                Cras fermentum odio eu feugiat lide par naso tierra. Justo eget
-                nada terra videa magna derita valies darta donna mare fermentum
-                iaculis eu non diam phasellus.
+                Somos uma empresa focada em prestar o melhor serviço de transporte do Brasil, prezando pela segurança e conforto dos nossos passageiros.
               </p>
               <div className="social-links mt-3">
-                <a href="#" className="twitter">
+                <a href="https://twitter.com/riocardmais?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" className="twitter">
                   <i className="bx bxl-twitter"></i>
                 </a>
-                <a href="#" className="facebook">
+                <a href="https://www.facebook.com/riocardmais/?locale=pt_BR" className="facebook">
                   <i className="bx bxl-facebook"></i>
                 </a>
-                <a href="#" className="instagram">
+                <a href="https://www.instagram.com/riocardmais/" className="instagram">
                   <i className="bx bxl-instagram"></i>
                 </a>
-                <a href="#" className="linkedin">
+                <a href="https://www.linkedin.com/company/riocardmais/?originalSubdomain=br" className="linkedin">
                   <i className="bx bxl-linkedin"></i>
                 </a>
               </div>
@@ -118,12 +115,12 @@ const Footer = () => {
         <div className="copyright">
           &copy; Copyright{" "}
           <strong>
-            <span>DevVE</span>
+            <span>LzDev</span>
           </strong>
-          . All Rights Reserved
+          . Todos os direitos reservados
         </div>
         <div className="credits">
-          Designed by <a href="#">SalvadorDevVE</a>
+          Designed by <a href="https://www.linkedin.com/in/lucas-oliveira-b95415219/">LzDev</a>
         </div>
       </div>
     </footer>

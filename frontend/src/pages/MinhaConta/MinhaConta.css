@@ -1,0 +1,38 @@
+.conta .profile{
+    margin:1rem 2rem ;
+}
+.conta .profile .img{
+    position: relative;
+    width: 250px;
+    height: 250px;
+    background-color: grey;
+    border-radius: 50%;
+    background: url("/assets/black-male-user-symbol.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    border:1px solid black;
+    box-shadow: 2px 2px 5px grey,
+                -1px -1px 5px grey;
+}
+.conta .profile .img::after{
+    content:'';
+    background: url("/assets/add.png");
+    background-size: 25px;
+    background-position: center;
+    background-repeat: no-repeat;
+    display:block;
+    width: 35px;
+    height: 35px;
+    background-color: lightgreen;
+    border-radius: 50%;
+    border: 1px solid grey;
+    position: absolute;
+    top:80%;
+    left:80%;
+    cursor: pointer;
+     transition: 0.4s;
+}
+.conta .profile .img:hover::after{
+    background-color: lightgrey;
+   
+}

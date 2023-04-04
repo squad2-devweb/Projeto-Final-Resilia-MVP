@@ -31,18 +31,18 @@ const NavBar = () => {
   };
   return (
     <Navbar
-      bg="light"
+      bg="info"
       expand="lg"
-      className="border-bottom border-info"
+      className="border-bottom border-light"
       style={style.font}
     >
       <Container fluid>
-        <Navbar.Brand href="#">RioCard+</Navbar.Brand>
+        <Navbar.Brand style={{fontSize:"1.5rem",fontWeight:"800"}} href="/">RioCard+</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
             className="me-auto my-2 my-lg-0"
-            style={{ maxHeight: "100px" }}
+            style={{ maxHeight: "100px"}}
             navbarScroll
           >
             <Nav.Link href="/">Página Princial</Nav.Link>
@@ -63,11 +63,11 @@ const NavBar = () => {
           <Form className="d-flex">
             <Form.Control
               type="search"
-              placeholder="Search"
+              placeholder="Pesquise aqui..."
               className="me-2"
               aria-label="Search"
             />
-            <Button variant="outline-info">Search</Button>
+            <Button variant="dark">Pesquisar</Button>
           </Form>
         </Navbar.Collapse>
       </Container>

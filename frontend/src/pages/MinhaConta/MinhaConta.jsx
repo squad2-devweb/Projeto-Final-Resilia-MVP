@@ -1,8 +1,7 @@
 import React, { useContext,useState } from "react";
 import { AuthContext } from "../../contexts/auth";
 import { Form,Button,Container } from "react-bootstrap";
-import { useNavigate } from "react-router-dom";
-
+import "./MinhaConta.css"
 const MinhaConta = () => {
   const { user,update,logout } = useContext(AuthContext);
   const { id,nome, email, cpf, idade = 0 } = user;
@@ -182,6 +181,11 @@ const MinhaConta = () => {
       ) : (
 
       <div className="conta border mt-5 mb-5" style={style.cont}>
+        <div className="profile">
+          <div className="img">
+            
+          </div>
+        </div>
         <div style={style.flex}>
             <h1>Informações da Conta:</h1>
         <p className='text-muted'>Nome:</p>
