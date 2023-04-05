@@ -35,16 +35,15 @@ export const destroyCartao = async (userId,id)=> {
     const url = `/users/${userId}/Cartoes/${id}`
     return API.delete(url)
 }
-const getRepositoryName = (url)=> {
-    // https://ihateregex.io/expr/url/
-    const REGEX = /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()!@:%_\+.~#?&\/\/=]*)/
-    const match = url.match(REGEX)
-    if(match[2]) {
-        const values = match[2].split('/')
-        return `${values[1]}/${values[2]}`
-    }
-}
-
+// const getRepositoryName = (url)=> {
+//     // https://ihateregex.io/expr/url/
+//     const REGEX = /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()!@:%_\+.~#?&\/\/=]*)/
+//     const match = url.match(REGEX)
+//     if(match[2]) {
+//         const values = match[2].split('/')
+//         return `${values[1]}/${values[2]}`
+//     }
+// }
 export const createMensagem = (userId,mensagemSend) => {
     const defaultUser = 69420
     if(userId){
@@ -53,4 +52,14 @@ export const createMensagem = (userId,mensagemSend) => {
         return API.post(`/users/${defaultUser}/mensagens`,mensagemSend)
     }
 }
-
+export const postarSobre = (titulo,texto)=> {
+    return API.post(`/admin/sobre`,{titulo,texto},(res)=>{
+        console.log(res)
+    })
+}
+export const getSobre = ()=>{
+    return API.get("/sobre")
+}
+export const deleteSobre = (id)=>{
+    return API.delete(`/admin/sobre/${id}`)
+}

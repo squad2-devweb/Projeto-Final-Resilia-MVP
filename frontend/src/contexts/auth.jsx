@@ -1,5 +1,5 @@
 import React, { createContext,useState,useEffect } from "react"
-import { API,createSession,createUser,deleteUser,updateUser,createMensagem } from "../services/api"
+import { API,createSession,createUser,deleteUser,updateUser,createMensagem,postarSobre,getSobre,deleteSobre } from "../services/api"
 import { useNavigate } from "react-router-dom"
 
 export const AuthContext = createContext()
@@ -10,6 +10,11 @@ export const AuthProvider = ({ children }) => {
     const [loading,setLoading] = useState(true)
     const [loginError,setLoginError] = useState('')
     const [signUpError,setSignUpError] = useState('')
+
+    const [sobre,SetSobre] = useState({})
+
+
+
     useEffect(()=>{
         const user = localStorage.getItem('user')
         const token = localStorage.getItem('token')
@@ -20,6 +25,7 @@ export const AuthProvider = ({ children }) => {
         }
         setLoading(false)
     },[])
+
     const cadastro = async (nome,cpf,email,password) => {
       try {
         if(!email && !password){
@@ -84,6 +90,18 @@ export const AuthProvider = ({ children }) => {
         console.log(err)
       }
     }
+    const AdminSobrePost = async (titulo,texto)=>{
+      console.log(titulo,texto)
+      await postarSobre(titulo,texto)
+    }
+    const AdminSobreDelete = async(id)=>{
+      await deleteSobre(id)
+    }
+    useEffect( ()=>{
+      (async () => await getSobre().then((data)=>{
+        SetSobre(data.data)
+      }))()
+  },[AdminSobreDelete,AdminSobrePost])
 
   return (
     <AuthContext.Provider
@@ -98,7 +116,10 @@ export const AuthProvider = ({ children }) => {
         logout,
         deleteAcc,
         update,
-        postMensagem
+        postMensagem,
+        AdminSobrePost,
+        AdminSobreDelete,
+        sobre
       }}>
       {children}
     </AuthContext.Provider>

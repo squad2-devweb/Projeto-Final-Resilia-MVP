@@ -17,6 +17,7 @@ const MeusCartoes = () => {
       const response = await getCartoes(user?.id,query)
       setCartoes(response.data)
       setLoading(false)
+      console.log(typeof response.data)
     } catch (err) {
       console.error(err)
       setLoadingError(true)
