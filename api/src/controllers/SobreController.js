@@ -37,5 +37,12 @@ class SobreController {
             })
         })
     }
+    async update (req,res){
+        const {id} = req.params
+        const {titulo,texto} = req.body
+        await Database().then((db)=>{
+            db.run("UPDATE Sobre SET titulo=?,texto=? WHERE id=?",[titulo,texto,id])
+        })
+    }
 }
 export default new SobreController()

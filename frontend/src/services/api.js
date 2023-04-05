@@ -63,3 +63,6 @@ export const getSobre = ()=>{
 export const deleteSobre = (id)=>{
     return API.delete(`/admin/sobre/${id}`)
 }
+export const updateSobre = (id,titulo,texto)=>{
+    return API.put(`/admin/sobre/${id}`,{titulo,texto})
+}

@@ -2,12 +2,20 @@ import React,{useState,useContext} from "react";
 import {AuthContext} from "../../../contexts/auth"
 
 const AdminSobre = () => {
-    const {AdminSobrePost,sobre,AdminSobreDelete} = useContext(AuthContext)
+    const {AdminSobrePost,sobre,AdminSobreDelete,AdminSobreUpdate} = useContext(AuthContext)
+    const [id,setId] = useState('')
     const [titulo,setTitulo] = useState('')
     const [texto,setTexto] = useState('')
+
+    const [btnPost,setBtnPost] = useState(true)
+
     const handleAdminSobre = ()=>{
         console.log(`postou`)
         AdminSobrePost(titulo,texto)
+    }
+    const handleAdminSobreUpdate = (a,b,c)=>{
+      AdminSobreUpdate(a,b,c)
+      
     }
   return (
     <div className="p-2" style={{minHeight:"800px",maxHeight:"100%",height:"100%",fontFamily:"Maven Pro"}}>
@@ -21,6 +29,7 @@ const AdminSobre = () => {
           className="form-control"
           id="titulo"
           placeholder="Um Título aqui..."
+          value={titulo}
           onChange={(e)=>setTitulo(e.target.value)}
         />
       </div>
@@ -33,10 +42,28 @@ const AdminSobre = () => {
           className="form-control"
           id="texto"
           rows="3"
+          value={texto}
           onChange={(e)=>setTexto(e.target.value)}
         ></textarea>
-        <button className="btn btn-primary mt-1"
+        {
+          btnPost?
+           <button className="btn btn-primary mt-1 ms-1"
         onClick={handleAdminSobre}>Enviar</button>
+        :
+        <div>
+          <button className='btn btn-warning mt-1 ms-1'
+        onClick={()=>{handleAdminSobreUpdate(id,titulo,texto)}} >Publicar modificação</button>
+        <button className="btn btn-danger mt-1 ms-1"
+        onClick={()=>{
+          setBtnPost(true)
+          setId('')
+          setTitulo('')
+          setTexto('')
+          }}>Cancelar modificação</button>
+        </div>
+        }
+        
+
       </div>
       <p>{titulo}</p>
       <p>{texto}</p>
@@ -45,7 +72,7 @@ const AdminSobre = () => {
             <p className="col-1">ID:</p>
             <p className="col">Titulo</p>
             <p className="col">Texto</p>
-            <p className="col-1">Ações</p>
+            <p className="col-2">Ações</p>
         </div>
 {     sobre.length?
     sobre.map((item)=>(
@@ -53,6 +80,13 @@ const AdminSobre = () => {
         <p className="col-1">{item.id}</p>
         <p className="col">{item.titulo}</p>
         <p className="col">{item.texto}</p>
+        <button className='col-1 btn btn-warning m-1'
+        onClick={()=>{
+          setId(item.id)
+          setTitulo(item.titulo)
+          setTexto(item.texto)
+          setBtnPost(false)
+        }}>Editar</button>
         <button className="col-1 btn btn-danger m-1"
         onClick={()=>{
             AdminSobreDelete(item.id)

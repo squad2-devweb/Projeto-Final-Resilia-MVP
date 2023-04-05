@@ -36,5 +36,6 @@ routes.get('/mensagens/:user_id' ,MensagensController.show)
 
 routes.post('/admin/sobre',SobreController.create)
 routes.delete('/admin/sobre/:id',SobreController.destroy)
+routes.put("/admin/sobre/:id",SobreController.update)
 
 export default routes
