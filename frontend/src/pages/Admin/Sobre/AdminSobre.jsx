@@ -6,15 +6,18 @@ const AdminSobre = () => {
     const [id,setId] = useState('')
     const [titulo,setTitulo] = useState('')
     const [texto,setTexto] = useState('')
-
     const [btnPost,setBtnPost] = useState(true)
 
     const handleAdminSobre = ()=>{
-        console.log(`postou`)
         AdminSobrePost(titulo,texto)
+        setTitulo('')
+        setTexto('')
     }
     const handleAdminSobreUpdate = (a,b,c)=>{
       AdminSobreUpdate(a,b,c)
+      setBtnPost(true)
+      setTitulo('')
+      setTexto('')
       
     }
   return (
@@ -65,8 +68,6 @@ const AdminSobre = () => {
         
 
       </div>
-      <p>{titulo}</p>
-      <p>{texto}</p>
       <div className="getSobre container text-center">
         <div className="label row">
             <p className="col-1">ID:</p>

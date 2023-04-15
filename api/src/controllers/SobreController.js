@@ -42,6 +42,9 @@ class SobreController {
         const {titulo,texto} = req.body
         await Database().then((db)=>{
             db.run("UPDATE Sobre SET titulo=?,texto=? WHERE id=?",[titulo,texto,id])
+            .then((data)=>{
+                res.status(200).json(data.changes)
+            })
         })
     }
 }

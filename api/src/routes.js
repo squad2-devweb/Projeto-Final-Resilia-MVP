@@ -9,7 +9,7 @@ const routes = new Router()
 // createTablePessoas()
 // createTableCartoes()
 // createTableMensagens()
-createTableSobre()
+// createTableSobre()
 //controllers publicos
 routes.post('/sessions'     ,SessionsController.create)
 routes.post('/users'        ,UsersController.create)

@@ -1,15 +1,13 @@
 import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../contexts/auth";
-import { getSobre } from "../../services/api";
 const Sobre = () => {
   const { sobre } = useContext(AuthContext);
   const teste = [
     { id: 2, titulo: "teste1", texto: "texto" },
     { id: 1, titulo: "teste2", texto: "textao" },
   ];
-
   return (
-    <div style={{ minHeight: "800px", maxHeight: "100%", height: "100%",padding:"1rem 2rem" }}>
+    <div style={{ minHeight: "800px", maxHeight: "100%", height: "100%",padding:"1rem 2rem",fontFamily:"Maven Pro" }}>
       <h1 className="text-center mt-2 mb-3">Sobre</h1>
 {
   sobre.length? 
