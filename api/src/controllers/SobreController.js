@@ -1,4 +1,4 @@
-import { Database } from "../database/index"
+import { Database } from "../database/index.js"
 
 export async function createTableSobre(){
     try {
@@ -13,7 +13,7 @@ export async function createTableSobre(){
 class SobreController {
     async index(_,res) {
         await Database().then((db)=>{
-            db.all("SELECT * FROM Sobre")
+            db.all("SELECT * FROM Sobre ORDER BY id DESC")
             .then((data)=>{
                 res.status(200).json(data)
             })
